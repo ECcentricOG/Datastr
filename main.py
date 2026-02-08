@@ -1,7 +1,4 @@
-from maths.digits import reverse_digit
+from recursion.basic_recursion import sum_of_n
 
 
-arr = [131,4633,24,521111,20,9]
-
-for i in arr:
-    print(reverse_digit(i))
+print(sum_of_n(10))
