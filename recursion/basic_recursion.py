@@ -1,3 +1,7 @@
+from typing import List
+from warnings import warn
+
+
 def print_one_to_n(n:int):
     if n <= 0:
         return
@@ -18,5 +22,6 @@ def sum_of_n(n:int) -> int:
 def factorial(n:int) -> int:
     if n <= 1:
         return 1
-
     return n * factorial(n - 1)
+    
+def reverse_array(nums:List):
