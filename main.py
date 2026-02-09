@@ -1,4 +1,4 @@
-from recursion.basic_recursion import sum_of_n
+from recursion.basic_recursion import factorial
 
 
-print(sum_of_n(10))
+print(factorial(5))
