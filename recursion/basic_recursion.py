@@ -24,4 +24,10 @@ def factorial(n:int) -> int:
         return 1
     return n * factorial(n - 1)
     
-def reverse_array(nums:List):
+def revese_array(nums:List, n:int): #change the logic wrronpg this time
+    pass
+    if n <= len(nums) // 2:
+        return
+
+    nums[len(nums) - n], nums[n] = nums[n], nums[len(nums) - n]
+    revese_array(nums, n - 1)
