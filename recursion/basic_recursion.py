@@ -1,6 +1,4 @@
 from typing import List
-from warnings import warn
-
 
 def print_one_to_n(n:int):
     if n <= 0:
@@ -23,3 +21,9 @@ def factorial(n:int) -> int:
     if n <= 1:
         return 1
     return n * factorial(n - 1)
+
+def reverse_array(nums:List, start:int, end:int):
+    if start >= end:
+        return
+    nums[start], nums[end] = nums[end], nums[start]
+    reverse_array(nums, start + 1, end - 1)
