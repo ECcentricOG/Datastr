@@ -11,3 +11,14 @@ def count_frequencies(nums:List[int]):
             tracker[num] = 1
 
     print(tracker)
+
+def max_frequency(nums:List[int]) -> int:
+    pass
+
+def single_count(nums:List[int]) -> int:
+    ans = 0
+
+    for num in nums:
+        ans ^= num
+
+    return ans
