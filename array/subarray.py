@@ -18,3 +18,20 @@ def longest_subarray_of_sum(nums:List[int], k:int) -> int:
             return right - left 
 
     return 0
+
+
+# Kadane's algorithm
+def max_sum_subarray(nums:List[int]) -> int:
+    max = float('-inf')
+    sum = 0
+
+    for num in nums:
+        sum += num
+
+        if sum > max:
+            max = sum
+
+        if sum < 0:
+            sum = 0
+
+    return int(max)
