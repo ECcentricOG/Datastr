@@ -35,3 +35,16 @@ def max_sum_subarray(nums:List[int]) -> int:
             sum = 0
 
     return int(max)
+
+#Max profit 
+def buy_sell_stocks(prices:List[int]) -> int:
+    buy_price = prices[0]
+    profit = 0
+
+    for i in range(1, len(prices)):
+        if prices[i] < buy_price:
+            buy_price = prices[i]
+        else:
+            profit = max(profit, prices[i] - buy_price)
+
+    return profit
