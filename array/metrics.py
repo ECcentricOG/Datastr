@@ -1,4 +1,5 @@
 from typing import List
+from recursion.basic_recursion import reverse_array
 
 
 def set_zeros(nums:List[List[int]]) -> None:
@@ -18,3 +19,14 @@ def set_zeros(nums:List[List[int]]) -> None:
         for col in range(m):
             if rows[row] or cols[col]:
                 nums[row][col] = 0
+
+
+def rotate_by_ninty(matrix:List[List[int]]) -> None: 
+    n = len(matrix)
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+    for i in range(n):
+        reverse_array(matrix[i], 0, len(matrix[i]) - 1)
