@@ -48,3 +48,18 @@ def buy_sell_stocks(prices:List[int]) -> int:
             profit = max(profit, prices[i] - buy_price)
 
     return profit
+
+
+def subarray_sum(nums:List[int], k:int) -> int:
+    count:int = 0
+    prefix_sum = 0
+    map = {0:1}
+
+    for num in nums:
+        prefix_sum += num
+        diff = prefix_sum - k
+        if diff in map:
+            count += map[diff]
+        map[prefix_sum] = map.get(prefix_sum, 0) + 1
+
+    return count
