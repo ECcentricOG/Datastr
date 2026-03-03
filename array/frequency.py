@@ -49,3 +49,19 @@ def majority_element(nums:List[int]) -> int:
             count -= 1
 
     return ele
+
+def majority_elements_II(nums:List[int]) -> List[int]:
+    map = {}
+    n = len(nums)
+    ans = []
+
+    for num in nums:
+        if num in map:
+            map[num] = map[num] + 1
+        else:
+            map[num] = 1
+
+        if map[num] > n // 3 and num not in ans:
+            ans.append(num)
+
+    return ans
