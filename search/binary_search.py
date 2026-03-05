@@ -35,3 +35,38 @@ def search_insert(nums:List[int], target:int) -> int:
             end = mid - 1
 
     return start
+
+def first_occurrence(nums:List[int], target:int) -> int:
+    start = 0
+    end = len(nums) - 1
+    ans = -1
+    
+    while start <= end:
+        mid = start + (end - start) // 2
+
+        if nums[mid] == target:
+            ans = mid
+            end = mid - 1
+        elif nums[mid] < target:
+            start += 1
+        else:
+            end -= 1
+
+    return ans
+
+def last_occourrence(nums:List[int], target:int) -> int:
+    start = 0
+    end = len(nums) - 1
+    ans = -1
+
+    while start <= end:
+        mid = start + (end - start) // 2
+        if nums[mid] == target:
+            ans = mid
+            start = mid + 1
+        elif nums[mid] < target:
+            start += 1
+        else:
+            end -= 1
+
+    return ans
