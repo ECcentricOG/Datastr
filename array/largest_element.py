@@ -30,3 +30,18 @@ def second_largest(nums: List[int]) -> int:
             s = num
 
     return s if s != m else -1
+
+
+def leaders(nums:List[int]) -> List[int]:
+    n = len(nums)
+    ans:List[int] = [1] * n
+    count = 0
+    max = float('-inf')
+
+    for i in range(n - 1, -1, -1):
+        if nums[i] > max:
+            ans[0] = nums[i]
+            max = nums[i]
+            count += 1
+
+    return ans[:count + 1]
