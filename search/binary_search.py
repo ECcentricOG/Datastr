@@ -70,3 +70,18 @@ def last_occourrence(nums:List[int], target:int) -> int:
             end -= 1
 
     return ans
+
+def lower_bound(nums:List[int], target:int) -> int:
+    start = 0
+    end = len(nums) - 1
+
+    while start <= end:
+        mid = start + (end - start) // 2
+        if nums[mid] == target:
+            return mid
+        elif nums[mid] < target:
+            start = mid + 1
+        else:
+            end = mid - 1
+        
+    return start
