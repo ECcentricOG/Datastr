@@ -10,3 +10,13 @@ class LinkedList:
         node:ListNode = ListNode(val)
         node.next = head
         return node
+
+    def delete_node(self, node:ListNode) -> None:
+        temp: Optional[ListNode] = self.head
+
+        while temp.next != None:
+            if temp.next.val == node.val:
+                break
+            temp = temp.next
+
+        temp.next = temp.next.next
