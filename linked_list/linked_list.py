@@ -14,3 +14,13 @@ class LinkedList:
     def delete_node(self, node:ListNode) -> None:
         node.val = node.next.val
         node.next = node.next.next
+
+    def length(self, head:ListNode) -> int:
+        if not head:
+            return 0
+        count: int = 1
+        while head.next != None:
+            count += 1
+            head = head.next
+
+        return count
