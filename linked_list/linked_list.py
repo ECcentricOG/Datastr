@@ -24,3 +24,11 @@ class LinkedList:
             head = head.next
 
         return count
+
+    def search_key(self, head:ListNode, key: int) -> bool:
+        temp: ListNode = head
+        while temp != None:
+            if temp.val == key:
+                return True
+            temp = temp.next
+        return False
